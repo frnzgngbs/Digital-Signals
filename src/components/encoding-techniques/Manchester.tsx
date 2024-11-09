@@ -83,7 +83,7 @@ const Manchester = ({ bitsArray }: EncodingTechniquesProp) => {
 		const bitValue = bitsArray[data.bitIndex];
 
 		return (
-			<div className="bg-white p-2 border border-gray-200 rounded shadow">
+			<div className="bg-green-600 text-white p-2 border border-green-500 rounded shadow">
 				<p>Bit: {bitValue}</p>
 			</div>
 		);
@@ -96,7 +96,7 @@ const Manchester = ({ bitsArray }: EncodingTechniquesProp) => {
 				<LineChart
 					data={chartData}
 					margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-					<CartesianGrid strokeDasharray="3 3" />
+					<CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
 					<XAxis
 						dataKey="x"
 						type="number"
@@ -105,15 +105,16 @@ const Manchester = ({ bitsArray }: EncodingTechniquesProp) => {
 						tickFormatter={(value) =>
 							bitsArray[Math.floor(value)]?.toString() || ""
 						}
+						stroke="#ffffff" // White color for axis ticks
 					/>
-					<YAxis domain={[-1.5, 1.5]} ticks={[-1, 0, 1]} />
+					<YAxis domain={[-1.5, 1.5]} ticks={[-1, 0, 1]} stroke="#ffffff" /> {/* White ticks for better contrast */}
 					<Tooltip content={customTooltip} />
 					<Legend />
 					<Line
 						name="Signal"
 						type="stepAfter"
 						dataKey="y"
-						stroke="#8884d8"
+						stroke="#32CD32" // Changed line color to lime green for better visibility
 						strokeWidth={2}
 						dot={false}
 						isAnimationActive={false}

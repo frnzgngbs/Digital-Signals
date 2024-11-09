@@ -3,10 +3,10 @@ import { Box, FormLabel, TextField, Grid } from "@mui/material";
 import { BitsInputProps } from "../types/BitsInputProps";
 
 const BitsInput: React.FC<BitsInputProps> = ({
-	inputBits,
-	onInputChange,
-	hasInputError,
-}) => {
+												 inputBits,
+												 onInputChange,
+												 hasInputError,
+											 }) => {
 	const theme = useTheme();
 
 	return (
@@ -17,9 +17,10 @@ const BitsInput: React.FC<BitsInputProps> = ({
 						<FormLabel
 							sx={{
 								fontSize: "0.9rem",
-								color: theme.palette.secondary.main,
+								color: "black", // Set text color to black for label
 								marginBottom: "0.5rem",
-							}}>
+							}}
+						>
 							Enter digital data:
 						</FormLabel>
 						<TextField
@@ -28,16 +29,16 @@ const BitsInput: React.FC<BitsInputProps> = ({
 								"& .MuiOutlinedInput-root": {
 									borderRadius: 2.3,
 									"& fieldset": {
-										borderColor: theme.palette.secondary.main,
+										borderColor: theme.palette.primary.main, // Adjusted border color
 									},
 									"&:hover fieldset": {
-										borderColor: theme.palette.secondary.main,
+										borderColor: theme.palette.primary.main, // Consistent hover border
 									},
 									"&.Mui-focused fieldset": {
-										borderColor: theme.palette.secondary.main,
+										borderColor: theme.palette.primary.main, // Consistent focused border
 									},
 									"& input": {
-										color: theme.palette.primary.main,
+										color: "black", // Set input text color to black
 									},
 								},
 							}}
