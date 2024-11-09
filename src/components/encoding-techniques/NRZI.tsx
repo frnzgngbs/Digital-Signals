@@ -46,7 +46,7 @@ const NRZI = ({ bitsArray }: EncodingTechniquesProp) => {
 		const bitValue = bitsArray[data.bitIndex];
 
 		return (
-			<div className="bg-white p-2 border border-gray-200 rounded shadow">
+			<div className="bg-blue-600 text-white p-2 border border-blue-500 rounded shadow">
 				<p>Bit: {bitValue}</p>
 			</div>
 		);
@@ -59,7 +59,7 @@ const NRZI = ({ bitsArray }: EncodingTechniquesProp) => {
 				<LineChart
 					data={chartData}
 					margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-					<CartesianGrid strokeDasharray="3 3" />
+					<CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
 					<XAxis
 						dataKey="x"
 						type="number"
@@ -68,15 +68,16 @@ const NRZI = ({ bitsArray }: EncodingTechniquesProp) => {
 						tickFormatter={(value) =>
 							bitsArray[Math.floor(value)]?.toString() || ""
 						}
+						stroke="#ffffff" // White color for axis ticks
 					/>
-					<YAxis domain={[-1.5, 1.5]} ticks={[-1, 0, 1]} />
+					<YAxis domain={[-1.5, 1.5]} ticks={[-1, 0, 1]} stroke="#ffffff" /> {/* White ticks for better contrast */}
 					<Tooltip content={customTooltip} />
 					<Legend />
 					<Line
 						name="Signal"
 						type="linear"
 						dataKey="y"
-						stroke="#8884d8"
+						stroke="#ff6347" // Changed line color to tomato red for better visibility
 						strokeWidth={2}
 						dot={false}
 						isAnimationActive={false}
